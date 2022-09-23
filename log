@@ -21,3 +21,14 @@ Fri 23 Sep 2022 04:07:46 PM UTC:
  tests:  11|6
 total_score: 15/70
 fbafb60
+Fri 23 Sep 2022 04:10:02 PM UTC: 
+ treemap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘minimum’:
+treemap.c:53:7: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   53 |   if (x = NULL)return NULL;
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+b0f2816
