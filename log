@@ -90,3 +90,22 @@ treemap.c:118:28: error: expected ‘;’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 89b87c7
+Sun 25 Sep 2022 08:28:38 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:114:25: error: ‘TreeNode’ has no member named ‘rigth’; did you mean ‘right’?
+  114 |     TreeNode* x = node->rigth;
+      |                         ^~~~~
+      |                         right
+treemap.c:115:9: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  115 |     x = minimun(x);
+      |         ^~~~~~~
+      |         minimum
+treemap.c:115:7: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  115 |     x = minimun(x);
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+b7f5873
