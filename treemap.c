@@ -107,9 +107,9 @@ if(tree->root == NULL) return;
       }  
   }
   else{
-    TreeNode* x = node->right;
-    x = minimum(x);
-    node->parent->left = x;
+    TreeNode* a = node->right;
+    a = minimum(a);
+    node->parent->left = a;
     hijo->parent = node->parent;
     hijo->right=node->right;
   }
