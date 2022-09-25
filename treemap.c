@@ -111,7 +111,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       
     }
   }else{
-    TreeNode* x = node->rigth;
+    TreeNode* x = node->right;
     x = minimun(x);
     node->parent->left = x;
     x->parent = node->parent;
