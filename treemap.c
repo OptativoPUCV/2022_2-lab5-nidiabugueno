@@ -96,7 +96,7 @@ if(tree->root == NULL) return;
         node->parent->left = node->left;
         node=NULL;
       }
-      if(node->right!=NULL){
+      else if(node->right!=NULL){
         node->right->parent = node->parent;
         node->parent->right = node->right;
         node=NULL;        
