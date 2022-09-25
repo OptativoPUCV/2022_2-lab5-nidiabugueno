@@ -101,11 +101,15 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
     }if(cont == 1) {
         TreeNode * hijo;
-        if(node->left) hijo = node->left;
-        else hijo = node->right;
+        if(node->left){
+          hijo = node->left;
+        } 
+        else{
+          hijo = node->right;
+        } 
         if(parent->left == node) {
             parent->left = hijo;
-        } else if(parent->right == node) {
+        }if(parent->right == node) {
             parent->right = hijo;
         }
         hijo->parent = parent;
