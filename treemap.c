@@ -88,12 +88,12 @@ while(x->left != NULL){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-if(tree->root == NULL) {
-  return;
-}
+  if(tree->root == NULL) {
+    return;
+  }
 
-  if(node->left==NULL || node->right==NULL){
-      if(node->left!=NULL){
+  if(node->left== NULL || node->right== NULL){
+      if(node->left! = NULL){
         node->left->parent = node->parent;
         node->parent->left = node->left;
         node=NULL;
@@ -115,8 +115,6 @@ if(tree->root == NULL) {
     nuevoNodo->parent = node->parent;
     nuevoNodo->right=node->right;
   }
-
-
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
@@ -149,7 +147,14 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    return NULL;
+  Pair* x = searchTreeMap(tree,key);
+  if ( x = NULL){
+    if(tree->lower_than(key,tree->current->pair->key)){
+      return tree->current->pair;
+    }
+    x = nextTreeMap(tree);
+  }
+    return x;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
