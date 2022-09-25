@@ -88,33 +88,33 @@ while(x->left != NULL){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-  if(tree->root == NULL) {
-    return;
-  }
-
-  if(node->left== NULL || node->right== NULL){
-      if(node->left != NULL){
-        node->left->parent = node->parent;
-        node->parent->left = node->left;
-        node=NULL;
-        
-      }else if(node->right!=NULL){
-        node->right->parent = node->parent;
-        node->parent->right = node->right;
-        node=NULL;        
-      }
-      else{
-        node->parent->left=node->left;
-        node=NULL;
-      }  
-  }
-  else{
-    TreeNode* nuevoNodo = node->right;
-    nuevoNodo = minimum(nuevoNodo);
-    node->parent->left = nuevoNodo;
-    nuevoNodo->parent = node->parent;
-    nuevoNodo->right=node->right;
-  }
+    TreeNode *parent = node->parent;
+  
+    int count = (node->left != NULL) + (node->right != NULL);
+    if (count == 0) { 
+       
+        if(parent->left == node) {
+            parent->left = NULL;
+        } else if(parent->right == node){
+            parent->right = NULL;
+        }
+        free(node);
+    } else if(count == 1) {
+        TreeNode * child;
+        if(node->left) child = node->left;
+        else child = node->right;
+        if(parent->left == node) {
+            parent->left = child;
+        } else if(parent->right == node) {
+            parent->right = child;
+        }
+        child->parent = parent;
+        free(node);
+    } else if(count == 2) {
+        TreeNode *bigger = minimum(node->right);
+        node->pair = bigger->pair;
+        removeNode(tree, bigger);
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
@@ -164,12 +164,5 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  TreeNode * nod = nextTreeMapNode(tree);
-  
-  if(nod){
-    return nod->pair; 
-  } 
-  else{
-    return NULL;
-  }
+
 }
