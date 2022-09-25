@@ -91,14 +91,14 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode *parent = node->parent;
   
     int cont = (node->left != NULL) + (node->right != NULL);
-    if (cont == 0) { 
-       
-        if(parent->left == node) {
+    if (cont == 0)
+    { 
+        if(parent->left == node) 
+        {
             parent->left = NULL;
         } else if(parent->right == node){
             parent->right = NULL;
         }
-        free(node);
     } else if(cont == 1) {
         TreeNode * hijo;
         if(node->left) hijo = node->left;
