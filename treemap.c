@@ -99,7 +99,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         } else if(parent->right == node){
             parent->right = NULL;
         }
-    } else if(cont == 1) {
+    }if(cont == 1) {
         TreeNode * hijo;
         if(node->left) hijo = node->left;
         else hijo = node->right;
@@ -110,7 +110,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
         hijo->parent = parent;
         free(node);
-    } else if(cont == 2) {
+    }if(cont == 2) {
         TreeNode *myor = minimum(node->right);
         node->pair = myor->pair;
         removeNode(tree, myor);
