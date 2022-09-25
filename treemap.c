@@ -110,8 +110,8 @@ if(tree->root == NULL) return;
     TreeNode* nuevoNodo = node->right;
     nuevoNodo = minimum(nuevoNodo);
     node->parent->left = nuevoNodo;
-    hijo->parent = node->parent;
-    hijo->right=node->right;
+    nuevoNodo->parent = node->parent;
+    nuevoNodo->right=node->right;
   }
 
 
