@@ -110,6 +110,12 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       node = NULL;
       
     }
+  }else{
+    TreeNode* x = node->rigth;
+    x = minimun(x);
+    node->parent->left = x;
+    x->parent = node->parent;
+    x->right = node->rightM
   }
 
 }
