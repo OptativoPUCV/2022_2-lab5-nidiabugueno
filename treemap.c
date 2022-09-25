@@ -111,9 +111,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         hijo->parent = parent;
         free(node);
     } else if(cont == 2) {
-        TreeNode *bigger = minimum(node->right);
-        node->pair = bigger->pair;
-        removeNode(tree, bigger);
+        TreeNode *myor = minimum(node->right);
+        node->pair = myor->pair;
+        removeNode(tree, myor);
     }
 }
 
