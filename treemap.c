@@ -90,7 +90,7 @@ while(x->left != NULL){
 void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode *parent = node->parent;
   
-    int count = (node->left != NULL) + (node->right != NULL);
+    int cont = (node->left != NULL) + (node->right != NULL);
     if (count == 0) { 
        
         if(parent->left == node) {
@@ -99,18 +99,18 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             parent->right = NULL;
         }
         free(node);
-    } else if(count == 1) {
-        TreeNode * child;
-        if(node->left) child = node->left;
-        else child = node->right;
+    } else if(cont == 1) {
+        TreeNode * hijo;
+        if(node->left) hijo = node->left;
+        else hijo = node->right;
         if(parent->left == node) {
-            parent->left = child;
+            parent->left = hijo;
         } else if(parent->right == node) {
-            parent->right = child;
+            parent->right = hijo;
         }
-        child->parent = parent;
+        hijo->parent = parent;
         free(node);
-    } else if(count == 2) {
+    } else if(cont == 2) {
         TreeNode *bigger = minimum(node->right);
         node->pair = bigger->pair;
         removeNode(tree, bigger);
