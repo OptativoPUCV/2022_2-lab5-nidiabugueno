@@ -147,14 +147,14 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-  Pair* x = searchTreeMap(tree,key);
-  if ( x == NULL){
+  Pair* tmp = searchTreeMap(tree,key);
+  if ( tmp == NULL){
     if(tree->lower_than(key,tree->current->pair->key)){
       return tree->current->pair;
     }
     x = nextTreeMap(tree);
   }
-    return x;
+    return tmp;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
