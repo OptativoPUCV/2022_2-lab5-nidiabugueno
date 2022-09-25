@@ -164,5 +164,11 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    return NULL;
+    TreeNode * nod = nextTreeMapNode(tree);
+    if(nod){
+      return nod->pair; 
+    } 
+    else{
+      return NULL;
+    }
 }
