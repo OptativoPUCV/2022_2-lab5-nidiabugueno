@@ -246,3 +246,16 @@ treemap.c:167:22: error: initialization of ‘TreeNode *’ from ‘int’ makes
 cc1: all warnings being treated as errors
 Compilation failed
 4b94695
+Sun 25 Sep 2022 08:54:50 PM UTC: 
+ treemap.c | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:167:20: error: implicit declaration of function ‘nextTreeMapNode’; did you mean ‘nextTreeMap’? [-Werror=implicit-function-declaration]
+  167 |   TreeNode * nod = nextTreeMapNode(tree);
+      |                    ^~~~~~~~~~~~~~~
+      |                    nextTreeMap
+treemap.c:167:20: error: initialization of ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+cc1: all warnings being treated as errors
+Compilation failed
+39b1fb0
