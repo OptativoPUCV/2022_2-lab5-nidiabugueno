@@ -93,7 +93,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   }
 
   if(node->left== NULL || node->right== NULL){
-      if(node->left! = NULL){
+      if(node->left != NULL){
         node->left->parent = node->parent;
         node->parent->left = node->left;
         node=NULL;
@@ -148,7 +148,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
   Pair* x = searchTreeMap(tree,key);
-  if ( x = NULL){
+  if ( x == NULL){
     if(tree->lower_than(key,tree->current->pair->key)){
       return tree->current->pair;
     }
