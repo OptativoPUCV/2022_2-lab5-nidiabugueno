@@ -79,11 +79,11 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 }
 
 TreeNode * minimum(TreeNode * x){
-  if (x == NULL)return NULL; //para alcanzar el mínimo, sólo recorremos hacia el punto más izquierdo
-  while(x->left != NULL){
-    x = x->left;
-  }
-    return x;
+if (x == NULL)return NULL; //para alcanzar el mínimo, sólo recorremos hacia el punto más izquierdo
+while(x->left != NULL){
+  x = x->left;
+}
+  return x;
 }
 
 
@@ -107,9 +107,9 @@ if(tree->root == NULL) return;
       }  
   }
   else{
-    TreeNode* hijo = node->right;
-    hijo = minimum(hijo);
-    node->parent->left = hijo;
+    TreeNode* x = node->right;
+    x = minimum(x);
+    node->parent->left = x;
     hijo->parent = node->parent;
     hijo->right=node->right;
   }
