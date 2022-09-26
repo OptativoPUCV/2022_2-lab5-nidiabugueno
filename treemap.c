@@ -153,7 +153,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 Pair * upperBound(TreeMap * tree, void* key) {
     Pair *buscarPair = searchTreeMap(tree, key);
     TreeNode *aux = tree->root;
-    TreeNode *UB = aux;
+    TreeNode *Ub = aux;
     int aux1, aux2;
 
   
@@ -166,26 +166,26 @@ Pair * upperBound(TreeMap * tree, void* key) {
         aux1 = tree->lower_than(aux->pair->key, key);
         if (aux1 == 1)
         {
-            aux1 = tree->lower_than(UB->pair->key, aux->pair->key);
-            if (aux1 == 1) UB = aux;
+            aux1 = tree->lower_than(Ub->pair->key, aux->pair->key);
+            if (aux1 == 1) Ub = aux;
             aux = aux->right;
         }
         else 
         {
-            aux1 = tree->lower_than(UB->pair->key, aux->pair->key);
-            if (aux1 == 1) UB = aux;
+            aux1 = tree->lower_than(Ub->pair->key, aux->pair->key);
+            if (aux1 == 1) Ub = aux;
 
             aux1 = tree->lower_than(key, aux->pair->key);
-            aux2 = tree->lower_than(aux->pair->key, UB->pair->key);
-            if (aux1 == 1 && aux2 == 1) UB = aux;
+            aux2 = tree->lower_than(aux->pair->key, Ub->pair->key);
+            if (aux1 == 1 && aux2 == 1) Ub = aux;
             aux = aux->left;
         }
     }
 
-    aux1 = tree->lower_than(UB->pair->key, key);
+    aux1 = tree->lower_than(Ub->pair->key, key);
     if (aux1 == 1) return NULL;
 
-    return UB->pair;
+    return Ub->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
