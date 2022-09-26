@@ -376,3 +376,9 @@ treemap.c:179:13: error: ‘resultado2’ undeclared (first use in this function
 treemap.c:179:13: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 935965b
+Mon 26 Sep 2022 02:10:29 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  29|0
+total_score: 70/70
+2de6152
