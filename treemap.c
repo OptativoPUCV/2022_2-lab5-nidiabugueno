@@ -152,14 +152,15 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
     Pair *buscarPair = searchTreeMap(tree, key);
+    TreeNode *aux = tree->root;
+    TreeNode *UB = aux;
+    int resultado, resultado2;
 
     if (buscarPair != NULL){
       return buscarPair;
     }
 
-    TreeNode *aux = tree->root;
-    TreeNode *UB = aux;
-    int resultado, resultado2;
+
 
     while (aux != NULL)
     {
